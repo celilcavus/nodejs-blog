@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <title>index</title>
+</head>
+
+<body>
+    <nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </nav>
+   
+  <center class="mt-2"><h1>Welcom to my blog!</h1></center>
+  <hr class="mb-5">
+
+  <div class="container-fluid">
+    <center>
+      <% model.forEach(blog=>{ %>
+        <div class="blog-card w-50 mt-3 mb-3 rounded-top-1 border border-1">
+          <div class="blog-image">
+            <div class="img-fluid ">
+              <img src="/image/<%= blog.blog_image %>" alt="" class="w-100 rounded-top-1">
+            </div>
+          </div>
+          <div class="blog-header">
+            <h3><a href="/blog-detail/<%= blog.id %>"><%= blog.blog_title %></a></h3>
+          </div>
+          <div class="blog-body p-1">
+              <p><%= blog.blog_desc %></p>
+          </div>
+        </div>
+      <% }) %>
+    </center>
+
+   
+  </div>
+
+
+
+    <!-- scripts -->
+  
+  </body>
+
+</html>
